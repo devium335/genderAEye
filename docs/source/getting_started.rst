@@ -36,14 +36,14 @@ Training
 1. Now go to the ``jetson-inference`` folder and open the docker container:
 
 .. code-block:: console
-    ./docker/run.sh
+    $ ./docker/run.sh
 
 2. Now in the docker container change directories so you are in ``jetson-inference/python/training/classification``
 
 3. Now run the training script to train the network. The ``model-dir`` argument should be where the model is saved and where the data is kept:
 
 .. code-block:: console
-    python3 train.py --model-dir=models/genderAEye data/genderAEye
+    $ python3 train.py --model-dir=models/genderAEye data/genderAEye
 
 .. note::
 
@@ -61,7 +61,7 @@ Now that you have trained the ResNet model you will need to convert it into ONNX
 2. Run the onnx export script:
 
 .. code-block:: console
-    python3 onnx_export.py --model-dir=models/genderAEye
+    $ python3 onnx_export.py --model-dir=models/genderAEye
 
 Look in jetson-inference/python/training/classification/models/genderAEye to see if there is a new model called resnet18.onnx there
 
@@ -80,27 +80,27 @@ In order to see how your network functions you can run images through them. You 
 
 .. code-block:: console
     ls models/cat_dog/
-
+    
 4. Set the NET and DATASET variables
 
 .. code-block:: console
-    NET=models/cat_dog
-    DATASET=data/cat_dog
+    $ NET=models/cat_dog
+    $ DATASET=data/cat_dog
 
 5. Run this command to see how it operated on an image from the male folder.
 
 .. code-block:: console
-    imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/male/C1_S1_I1.jpg male.jpg
+    $ imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/male/C1_S1_I1.jpg male.jpg
 
 6. Use scp to look at the image on your host computer
 
 **Windows:**
 .. code-block:: console
-    scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg C:\Users\<hostusername>\Desktop
+    $ scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg C:\Users\<hostusername>\Desktop
 
 **Mac:**
 .. code-block:: console
-    scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg ./
+    $ scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg ./
 
 .. image:: images/male.jpg
     :alt: male.jpg
