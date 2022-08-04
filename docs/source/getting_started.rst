@@ -84,7 +84,7 @@ In order to see how your network functions you can run images through them. You 
 3. Make sure that you have the model on your nano, you should see a file called ``resnet18.onnx``
 
 .. code-block:: console
-    
+
     ls models/cat_dog/
     
 4. Set the NET and DATASET variables
@@ -103,11 +103,13 @@ In order to see how your network functions you can run images through them. You 
 6. Use scp to look at the image on your host computer
 
 **Windows:**
+
 .. code-block:: console
 
     $ scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg C:\Users\<hostusername>\Desktop
 
 **Mac:**
+
 .. code-block:: console
 
     $ scp <nanousername>@192.168.55.1:/home/<nanousername>/jetson-inference/python/training/classification/male.jpg ./
