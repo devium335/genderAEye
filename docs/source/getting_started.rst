@@ -85,14 +85,14 @@ In order to see how your network functions you can run images through them. You 
 
 .. code-block:: console
 
-    ls models/cat_dog/
+    ls models/genderAEye/
     
 4. Set the NET and DATASET variables
 
 .. code-block:: console
 
-    $ NET=models/cat_dog
-    $ DATASET=data/cat_dog
+    $ NET=models/genderAEye
+    $ DATASET=data/genderAEye
 
 5. Run this command to see how it operated on an image from the male folder.
 
