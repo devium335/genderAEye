@@ -12,3 +12,4 @@ Citation: "Chandrashekhar Padole, Hugo Proença; Periocular Recognition: Analysi
 .. toctree::
 
    getting_started
+   manual_data_setup
